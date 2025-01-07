@@ -1,0 +1,21 @@
+# Foro Hub Challenge - Back End
+Este proyecto fue desarrollado para el programa educativo de Oracle ONE en la plataforma de Alura para el curso de Java y Spring Framework G7 - ONE, donde se reforzaron los conocimientos sobre el lenguaje de programación Java, se aprendió sobre Spring Framework, persistencia de datos, consultas con Spring Data JPA, desarrollo de una API REST, Spring Security (JWT, autenticación y autorización), documentación de APIs y bases para el testing de una aplicación. El proyecto desarrollado se encarga ofrecer información sobre los tópicos creados mediante peticiones HTTP GET, permitir la creación de nuevos tópicos mediante peticiones HTTP POST, permitir la actualización de tópicos mediante peticiones HTTP PUT y, finalmente, permite eliminar tópicos mediantes peticiones HTTP DELETE.
+## Descripción del desafío
+### Funciones disponibles
+1. Crear un nuevo tópico
+2. Mostrar todos los tópicos creados
+3. Mostrar un tópico específico
+4. Actualizar un tópico
+5. Eliminar un tópico
+### Funciones extra
+1. Documentación: se implementó SpringFox Swagger para documentar la API desarrollada. Swagger es una herramienta que ofrece una interfaz amigable y accesible, así como una forma de documentación automática generada simultáneamente con el desarrollo de la API.
+## Prerrequisitos y recomendaciones
+Antes de usar el proyecto y debido a que no está pensado para un usuario final determinado, se debe tener instalado como mínimo la versión 21 de JDK (Java Development Kit), algún IDE o herramienta de desarrollo y algún sistema gestor de bases de datos (SGBD). Se recomienda usar el IDE IntelliJ IDEA (IDE usado para desarrollar este proyecto) y el gestor de bases de datos MySQL (gestor utilizado para este proyecto). En caso de no usar MySQL, se deberá instalar el driver correspondiente y realizar los cambios respectivos.
+## Instrucciones de uso
+Para hacer uso de este proyecto se debe seguir los siguientes pasos:
+1. Clonar o descargar el repositorio del proyecto
+2. Descomprimir el archivo descargado (en caso de haber descargado el repositorio)
+3. Abrir el proyecto en un IDE (Entorno de Desarrollo Integrado) o herramienta de desarrollo
+4. Configurar la variables de entorno con los nombres de acuerdo con los definidos en el archivo "application.properties" y asignar los respectivos valores de cada variable para una correcta conexión con la base de datos
+## Autor
+Santiago Jair Torres Rivera
