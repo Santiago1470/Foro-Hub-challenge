@@ -3,10 +3,13 @@ package api.alura.forohub.domain.topico;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 
 @Entity(name = "Topico")
 @Table(name = "topicos")
@@ -26,10 +29,74 @@ public class Topico {
     @Column(unique = true)
     private String mensaje;
 
-    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
+    @Column(nullable = false, updatable = false)
+    @CreationTimestamp
     private LocalDateTime fechaCreacion;
 
-    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
+    @UpdateTimestamp
     private LocalDateTime fechaModificacion;
 
+    public Topico() {
+
+    }
+
+    public Topico(Long id, String titulo, String mensaje, LocalDateTime fechaCreacion, LocalDateTime fechaModificacion) {
+        this.id = id;
+        this.titulo = titulo;
+        this.mensaje = mensaje;
+        this.fechaCreacion = fechaCreacion;
+        this.fechaModificacion = fechaModificacion;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getMensaje() {
+        return mensaje;
+    }
+
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
+    }
+
+    public LocalDateTime getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public LocalDateTime getFechaModificacion() {
+        return fechaModificacion;
+    }
+
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
+        this.fechaModificacion = fechaModificacion;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Topico topico = (Topico) o;
+        return Objects.equals(id, topico.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
+    }
 }
