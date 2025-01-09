@@ -1,6 +1,5 @@
 package api.alura.forohub.infra.security;
 
-import api.alura.forohub.domain.usuario.Usuario;
 import api.alura.forohub.domain.usuario.UsuarioRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
