@@ -17,7 +17,7 @@ Para hacer uso de este proyecto se debe seguir los siguientes pasos:
 1. Clonar o descargar el repositorio del proyecto
 2. Descomprimir el archivo descargado (en caso de haber descargado el repositorio)
 3. Abrir el proyecto en un IDE (Entorno de Desarrollo Integrado) o herramienta de desarrollo
-4. Configurar la variables de entorno con los nombres de acuerdo con los definidos en el archivo "application.properties" y asignar los respectivos valores de cada variable para una correcta conexión con la base de datos
+4. Configurar las variables de entorno con los nombres de acuerdo con los definidos en el archivo "application.properties" y asignar los respectivos valores de cada variable para una correcta conexión con la base de datos
 5. Se debe crear al menos un usuario en la base de datos para la autenticación y generación de JWT para la autorización de las peticiones HTTP en los demás endpoints
 ## Notas
 1. La documentación de la API con Swagger UI se encuentra en la URL "url-base/swagger-ui/index.html"
