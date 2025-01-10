@@ -34,7 +34,7 @@ public class TokenService {
     }
 
     public String getSubject(String token) {
-        if(token != null) {
+        if(token == null) {
             throw new RuntimeException();
         }
         DecodedJWT verifier = null;

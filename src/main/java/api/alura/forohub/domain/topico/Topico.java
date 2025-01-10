@@ -40,6 +40,11 @@ public class Topico {
 
     }
 
+    public Topico(String titulo, String mensaje) {
+        this.titulo = titulo;
+        this.mensaje = mensaje;
+    }
+
     public Topico(Long id, String titulo, String mensaje, LocalDateTime fechaCreacion, LocalDateTime fechaModificacion) {
         this.id = id;
         this.titulo = titulo;
