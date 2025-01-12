@@ -9,7 +9,7 @@ Este proyecto fue desarrollado para el programa educativo de Oracle ONE en la pl
 5. Actualizar un tópico
 6. Eliminar un tópico
 ### Funciones extra
-1. Documentación: se implementó SpringFox Swagger para documentar la API desarrollada. Swagger es una herramienta que ofrece una interfaz amigable y accesible, así como una forma de documentación automática generada simultáneamente con el desarrollo de la API.
+1. Documentación: se implementó Springdoc Swagger para documentar la API desarrollada. Swagger es una herramienta que ofrece una interfaz amigable y accesible, así como una forma de documentación automática generada simultáneamente con el desarrollo de la API.
 ## Prerrequisitos y recomendaciones
 Antes de usar el proyecto y debido a que no está pensado para un usuario final determinado, se debe tener instalado como mínimo la versión 21 de JDK (Java Development Kit), algún IDE o herramienta de desarrollo y algún sistema gestor de bases de datos (SGBD). Se recomienda usar el IDE IntelliJ IDEA (IDE usado para desarrollar este proyecto) y el gestor de bases de datos MySQL (gestor utilizado para este proyecto). En caso de no usar MySQL, se deberá instalar el driver correspondiente y realizar los cambios respectivos.
 ## Instrucciones de uso
@@ -20,7 +20,7 @@ Para hacer uso de este proyecto se debe seguir los siguientes pasos:
 4. Configurar las variables de entorno con los nombres de acuerdo con los definidos en el archivo "application.properties" y asignar los respectivos valores de cada variable para una correcta conexión con la base de datos
 5. Se debe crear al menos un usuario en la base de datos para la autenticación y generación de JWT para la autorización de las peticiones HTTP en los demás endpoints
 ## Notas
-1. La documentación de la API con Swagger UI se encuentra en la URL "url-base/swagger-ui/index.html"
-2. La documentación de la API en formato JSON se encuentra en la URL "url-base/v3/api-docs"
+1. La documentación de la API con Swagger UI se encuentra en la URL "http://server:port/swagger-ui/index.html"
+2. La documentación de la API en formato JSON se encuentra en la URL "http://server:port/v3/api-docs"
 ## Autor
 Santiago Jair Torres Rivera
