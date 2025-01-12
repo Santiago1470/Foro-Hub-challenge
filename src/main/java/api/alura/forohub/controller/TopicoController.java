@@ -1,9 +1,7 @@
 package api.alura.forohub.controller;
 
-import api.alura.forohub.domain.topico.DatosNuevoTopico;
-import api.alura.forohub.domain.topico.Topico;
-import api.alura.forohub.domain.topico.TopicoDto;
-import api.alura.forohub.domain.topico.TopicoRepository;
+import api.alura.forohub.domain.topico.*;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/topicos")
@@ -22,6 +21,12 @@ public class TopicoController {
 
     @Autowired
     private TopicoRepository topicoRepository;
+
+    @GetMapping("/{id}")
+    public ResponseEntity<TopicoDto> consultarPorId(@PathVariable Long id) {
+        Topico topico = topicoRepository.getReferenceById(id);
+        return ResponseEntity.ok(new TopicoDto(topico));
+    }
 
     @GetMapping
     public ResponseEntity<Page<TopicoDto>> consultarTopicos(@PageableDefault(size = 10) Pageable paginacion) {
@@ -33,8 +38,28 @@ public class TopicoController {
     public ResponseEntity<TopicoDto> crearTopico(@RequestBody @Valid DatosNuevoTopico datosNuevoTopico,
                                                  UriComponentsBuilder uriComponentsBuilder) {
         Topico topico = topicoRepository.save(new Topico(datosNuevoTopico.titulo(), datosNuevoTopico.mensaje()));
-        URI url = uriComponentsBuilder.path("/topicos/{id}").buildAndExpand(topico.getId()).toUri();
+        var uri = uriComponentsBuilder.path("/topicos/{id}").buildAndExpand(topico.getId()).toUri();
 
-        return ResponseEntity.created(url).body(new TopicoDto(topico));
+        return ResponseEntity.created(uri).body(new TopicoDto(topico));
+    }
+
+    @PutMapping("/{id}")
+    @Transactional
+    public ResponseEntity<TopicoDto> modificarTopico(@PathVariable Long id,
+                                                     @RequestBody DatosActualizarTopico datosActualizarTopico) {
+        Topico topico = topicoRepository.getReferenceById(id);
+        topico.actualizarDatos(datosActualizarTopico);
+        return ResponseEntity.ok(new TopicoDto(topico));
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public ResponseEntity ocultarTopico(@PathVariable Long id) {
+        Optional<Topico> topico = topicoRepository.findById(id);
+        if(topico.isEmpty()) {
+            throw new EntityNotFoundException();
+        }
+        topicoRepository.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 }
