@@ -20,7 +20,8 @@ Para hacer uso de este proyecto se debe seguir los siguientes pasos:
 4. Configurar las variables de entorno con los nombres de acuerdo con los definidos en el archivo "application.properties" y asignar los respectivos valores de cada variable para una correcta conexión con la base de datos
 5. Se debe crear al menos un usuario en la base de datos para la autenticación y generación de JWT para la autorización de las peticiones HTTP en los demás endpoints
 ## Notas
-1. La documentación de la API con Swagger UI se encuentra en la URL "http://server:port/swagger-ui/index.html"
-2. La documentación de la API en formato JSON se encuentra en la URL "http://server:port/v3/api-docs"
+Para conocer los endpoints disponibles y lo necesario para hacer uso de ellos existen dos formas:
+1. Documentación de la API con Swagger UI se encuentra en la URL "http://server:port/swagger-ui/index.html"
+2. Documentación de la API en formato JSON se encuentra en la URL "http://server:port/v3/api-docs"
 ## Autor
 Santiago Jair Torres Rivera
